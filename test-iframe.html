@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test iFrame</title>
+</head>
+<body>
+    <h3>Test Product Configurator</h3>
+    <p>Sample Drawer Configuration:</p>
+    <button onclick="addToCart()">Add to Cart</button>
+    <script>
+        function addToCart() {
+            const configData = {
+                product_id: 1, // Match the product_id from Odoo
+                size: "Small",
+                woodFinish: "Amber",
+                handleType: "Handle 1",
+                handleFinish: "Antique English",
+                legOption: "Leg A"
+            };
+            window.parent.postMessage(configData, "*");
+            alert("Configuration sent to Odoo!");
+        }
+    </script>
+</body>
+</html>
