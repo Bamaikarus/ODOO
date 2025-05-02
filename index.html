@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test iFrame</title>
+    <title>Product Configurator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -59,54 +59,66 @@
     </style>
 </head>
 <body>
-    <h3>Test Product Configurator</h3>
+    <h3>Product Configurator</h3>
     <div class="product-container">
         <!-- Product 1: Classic Drawer -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Classic Drawer">
+            <img src="/api/placeholder/200/150" alt="Classic Drawer">
             <h4>Classic Drawer</h4>
             <button onclick="addToCart(1, 'Classic Drawer')">Add to Cart</button>
         </div>
         <!-- Product 2: Modern Nightstand -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Modern Nightstand">
+            <img src="/api/placeholder/200/150" alt="Modern Nightstand">
             <h4>Modern Nightstand</h4>
             <button onclick="addToCart(2, 'Modern Nightstand')">Add to Cart</button>
         </div>
         <!-- Product 3: Vintage Chest -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Vintage Chest">
+            <img src="/api/placeholder/200/150" alt="Vintage Chest">
             <h4>Vintage Chest</h4>
             <button onclick="addToCart(3, 'Vintage Chest')">Add to Cart</button>
         </div>
         <!-- Product 4: Minimalist Drawer -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Minimalist Drawer">
+            <img src="/api/placeholder/200/150" alt="Minimalist Drawer">
             <h4>Minimalist Drawer</h4>
             <button onclick="addToCart(4, 'Minimalist Drawer')">Add to Cart</button>
         </div>
         <!-- Product 5: Rustic Cabinet -->
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Rustic Cabinet">
+            <img src="/api/placeholder/200/150" alt="Rustic Cabinet">
             <h4>Rustic Cabinet</h4>
             <button onclick="addToCart(5, 'Rustic Cabinet')">Add to Cart</button>
         </div>
     </div>
     <script>
         function addToCart(productId, productName) {
+            // Create the configuration data
             const configData = {
-                product_id: productId, // Match the product_id from Odoo
+                product_id: productId,
                 quantity: 1,
                 size: "Small",
                 woodFinish: "Amber",
                 handleType: "Handle 1",
                 handleFinish: "Antique English",
                 legOption: "Leg A",
-                product_name: productName // For reference
+                product_name: productName
             };
+            
+            // Send message to parent window (Odoo)
             window.parent.postMessage(configData, "*");
-            alert("Configuration for " + productName + " sent to Odoo!");
+            
+            // Show a confirmation to the user
+            alert("Product configuration sent: " + productName);
         }
+        
+        // Optional: Listen for confirmation from parent
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.confirmation) {
+                alert("Product added to cart successfully!");
+            }
+        });
     </script>
 </body>
 </html>
