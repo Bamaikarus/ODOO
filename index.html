@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product Configurator</title>
+    <title>Furniture Selector</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,7 +55,7 @@
             border: 1px solid #ccc;
         }
         .product-card button {
-            background-color: #007bff;
+            background-color: #28a745;
             color: white;
             border: none;
             padding: 8px 16px;
@@ -64,164 +64,156 @@
             transition: background-color 0.2s;
         }
         .product-card button:hover {
-            background-color: #0056b3;
+            background-color: #1e7e34;
         }
     </style>
 </head>
 <body>
-    <h3>Product Configurator</h3>
+    <h3>Furniture Selector</h3>
     <div class="product-container">
-        <!-- Product 1: Classic Drawer -->
+        <!-- Product 1: Urban Bookshelf -->
         <div class="product-card">
-            <img src="/api/placeholder/200/150" alt="Classic Drawer">
-            <h4>Classic Drawer</h4>
-            <form onsubmit="addToCart(event, 1, 'Classic Drawer')">
+            <img src="/api/placeholder/200/150?text=Bookshelf" alt="Urban Bookshelf">
+            <h4>Urban Bookshelf</h4>
+            <form onsubmit="addToCart(event, 1, 'Urban Bookshelf')">
                 <input type="hidden" name="product_id" value="1"/>
-                <select name="size">
-                    <option value="Small">Small</option>
+                <select name="height">
+                    <option value="Short">Short</option>
                     <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
+                    <option value="Tall">Tall</option>
                 </select>
-                <select name="wood_finish">
-                    <option value="Amber">Amber</option>
-                    <option value="Oak">Oak</option>
-                    <option value="Walnut">Walnut</option>
+                <select name="material">
+                    <option value="Pine">Pine</option>
+                    <option value="Birch">Birch</option>
+                    <option value="Cherry">Cherry</option>
                 </select>
-                <select name="handle_type">
-                    <option value="Handle 1">Handle 1</option>
-                    <option value="Handle 2">Handle 2</option>
+                <select name="shelf_type">
+                    <option value="Open">Open</option>
+                    <option value="Closed">Closed</option>
                 </select>
-                <select name="handle_finish">
-                    <option value="Antique English">Antique English</option>
-                    <option value="Brushed Nickel">Brushed Nickel</option>
+                <select name="color">
+                    <option value="White">White</option>
+                    <option value="Espresso">Espresso</option>
                 </select>
-                <select name="leg_option">
-                    <option value="Leg A">Leg A</option>
-                    <option value="Leg B">Leg B</option>
+                <select name="mount_option">
+                    <option value="Wall Mounted">Wall Mounted</option>
+                    <option value="Free Standing">Free Standing</option>
                 </select>
                 <button type="submit" data-iframe-target="true">Add to Cart</button>
             </form>
         </div>
-        <!-- Product 2: Modern Nightstand -->
+        <!-- Product 2: Cozy Side Table -->
         <div class="product-card">
-            <img src="/api/placeholder/200/150" alt="Modern Nightstand">
-            <h4>Modern Nightstand</h4>
-            <form onsubmit="addToCart(event, 2, 'Modern Nightstand')">
+            <img src="/api/placeholder/200/150?text=Side+Table" alt="Cozy Side Table">
+            <h4>Cozy Side Table</h4>
+            <form onsubmit="addToCart(event, 2, 'Cozy Side Table')">
                 <input type="hidden" name="product_id" value="2"/>
-                <select name="size">
-                    <option value="Small">Small</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
+                <select name="height">
+                    <option value="Low">Low</option>
+                    <option value="Standard">Standard</option>
                 </select>
-                <select name="wood_finish">
-                    <option value="Amber">Amber</option>
+                <select name="material">
                     <option value="Oak">Oak</option>
-                    <option value="Walnut">Walnut</option>
+                    <option value="Teak">Teak</option>
                 </select>
-                <select name="handle_type">
-                    <option value="Handle 1">Handle 1</option>
-                    <option value="Handle 2">Handle 2</option>
+                <select name="shape">
+                    <option value="Round">Round</option>
+                    <option value="Square">Square</option>
                 </select>
-                <select name="handle_finish">
-                    <option value="Antique English">Antique English</option>
-                    <option value="Brushed Nickel">Brushed Nickel</option>
+                <select name="drawer">
+                    <option value="None">None</option>
+                    <option value="One Drawer">One Drawer</option>
                 </select>
-                <select name="leg_option">
-                    <option value="Leg A">Leg A</option>
-                    <option value="Leg B">Leg B</option>
+                <select name="leg_style">
+                    <option value="Curved">Curved</option>
+                    <option value="Straight">Straight</option>
                 </select>
                 <button type="submit" data-iframe-target="true">Add to Cart</button>
             </form>
         </div>
-        <!-- Product 3: Vintage Chest -->
+        <!-- Product 3: Elegant Dresser -->
         <div class="product-card">
-            <img src="/api/placeholder/200/150" alt="Vintage Chest">
-            <h4>Vintage Chest</h4>
-            <form onsubmit="addToCart(event, 3, 'Vintage Chest')">
+            <img src="/api/placeholder/200/150?text=Dresser" alt="Elegant Dresser">
+            <h4>Elegant Dresser</h4>
+            <form onsubmit="addToCart(event, 3, 'Elegant Dresser')">
                 <input type="hidden" name="product_id" value="3"/>
-                <select name="size">
-                    <option value="Small">Small</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
+                <select name="drawer_count">
+                    <option value="4">4 Drawers</option>
+                    <option value="6">6 Drawers</option>
                 </select>
-                <select name="wood_finish">
-                    <option value="Amber">Amber</option>
-                    <option value="Oak">Oak</option>
-                    <option value="Walnut">Walnut</option>
+                <select name="finish">
+                    <option value="Matte Black">Matte Black</option>
+                    <option value="Rustic Gray">Rustic Gray</option>
                 </select>
-                <select name="handle_type">
-                    <option value="Handle 1">Handle 1</option>
-                    <option value="Handle 2">Handle 2</option>
+                <select name="handle_style">
+                    <option value="Knobs">Knobs</option>
+                    <option value="Pulls">Pulls</option>
                 </select>
-                <select name="handle_finish">
-                    <option value="Antique English">Antique English</option>
-                    <option value="Brushed Nickel">Brushed Nickel</option>
+                <select name="mirror">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
                 </select>
-                <select name="leg_option">
-                    <option value="Leg A">Leg A</option>
-                    <option value="Leg B">Leg B</option>
+                <select name="legs">
+                    <option value="With Legs">With Legs</option>
+                    <option value="Flat Base">Flat Base</option>
                 </select>
                 <button type="submit" data-iframe-target="true">Add to Cart</button>
             </form>
         </div>
-        <!-- Product 4: Minimalist Drawer -->
+        <!-- Product 4: Loft Bedframe -->
         <div class="product-card">
-            <img src="/api/placeholder/200/150" alt="Minimalist Drawer">
-            <h4>Minimalist Drawer</h4>
-            <form onsubmit="addToCart(event, 4, 'Minimalist Drawer')">
+            <img src="/api/placeholder/200/150?text=Bedframe" alt="Loft Bedframe">
+            <h4>Loft Bedframe</h4>
+            <form onsubmit="addToCart(event, 4, 'Loft Bedframe')">
                 <input type="hidden" name="product_id" value="4"/>
                 <select name="size">
-                    <option value="Small">Small</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
+                    <option value="Twin">Twin</option>
+                    <option value="Queen">Queen</option>
                 </select>
-                <select name="wood_finish">
-                    <option value="Amber">Amber</option>
-                    <option value="Oak">Oak</option>
-                    <option value="Walnut">Walnut</option>
+                <select name="material">
+                    <option value="Metal">Metal</option>
+                    <option value="Wood">Wood</option>
                 </select>
-                <select name="handle_type">
-                    <option value="Handle 1">Handle 1</option>
-                    <option value="Handle 2">Handle 2</option>
+                <select name="headboard">
+                    <option value="Included">Included</option>
+                    <option value="None">None</option>
                 </select>
-                <select name="handle_finish">
-                    <option value="Antique English">Antique English</option>
-                    <option value="Brushed Nickel">Brushed Nickel</option>
+                <select name="under_storage">
+                    <option value="Drawers">Drawers</option>
+                    <option value="Open Space">Open Space</option>
                 </select>
-                <select name="leg_option">
-                    <option value="Leg A">Leg A</option>
-                    <option value="Leg B">Leg B</option>
+                <select name="height">
+                    <option value="Standard">Standard</option>
+                    <option value="High">High</option>
                 </select>
                 <button type="submit" data-iframe-target="true">Add to Cart</button>
             </form>
         </div>
-        <!-- Product 5: Rustic Cabinet -->
+        <!-- Product 5: Accent Armchair -->
         <div class="product-card">
-            <img src="/api/placeholder/200/150" alt="Rustic Cabinet">
-            <h4>Rustic Cabinet</h4>
-            <form onsubmit="addToCart(event, 5, 'Rustic Cabinet')">
+            <img src="/api/placeholder/200/150?text=Armchair" alt="Accent Armchair">
+            <h4>Accent Armchair</h4>
+            <form onsubmit="addToCart(event, 5, 'Accent Armchair')">
                 <input type="hidden" name="product_id" value="5"/>
-                <select name="size">
-                    <option value="Small">Small</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
+                <select name="fabric">
+                    <option value="Linen">Linen</option>
+                    <option value="Velvet">Velvet</option>
                 </select>
-                <select name="wood_finish">
-                    <option value="Amber">Amber</option>
-                    <option value="Oak">Oak</option>
-                    <option value="Walnut">Walnut</option>
+                <select name="color">
+                    <option value="Navy">Navy</option>
+                    <option value="Mustard">Mustard</option>
                 </select>
-                <select name="handle_type">
-                    <option value="Handle 1">Handle 1</option>
-                    <option value="Handle 2">Handle 2</option>
+                <select name="arm_style">
+                    <option value="Rolled">Rolled</option>
+                    <option value="Straight">Straight</option>
                 </select>
-                <select name="handle_finish">
-                    <option value="Antique English">Antique English</option>
-                    <option value="Brushed Nickel">Brushed Nickel</option>
+                <select name="cushion">
+                    <option value="Firm">Firm</option>
+                    <option value="Soft">Soft</option>
                 </select>
-                <select name="leg_option">
-                    <option value="Leg A">Leg A</option>
-                    <option value="Leg B">Leg B</option>
+                <select name="legs">
+                    <option value="Wooden">Wooden</option>
+                    <option value="Metal">Metal</option>
                 </select>
                 <button type="submit" data-iframe-target="true">Add to Cart</button>
             </form>
@@ -229,36 +221,26 @@
     </div>
     <script>
         function addToCart(event, productId, productName) {
-            event.preventDefault(); // Prevent form submission from refreshing the page
+            event.preventDefault();
 
             const form = event.target;
             const formData = new FormData(form);
 
-            // Create the configuration data
             const configData = {
                 product_id: formData.get('product_id'),
                 quantity: 1,
-                size: formData.get('size') || '',
-                wood_finish: formData.get('wood_finish') || '',
-                handle_type: formData.get('handle_type') || '',
-                handle_finish: formData.get('handle_finish') || '',
-                leg_option: formData.get('leg_option') || '',
                 product_name: productName
             };
 
-            // Send message to parent window (Odoo)
-            window.parent.postMessage(configData, "*");
-
-            // Show a confirmation to the user
-            alert("Product configuration sent: " + productName);
-        }
-
-        // Listen for confirmation from parent
-        window.addEventListener('message', function(event) {
-            if (event.data && event.data.confirmation) {
-                alert("Product added to cart successfully!");
+            for (let [key, value] of formData.entries()) {
+                if (key !== 'product_id') {
+                    configData[key] = value;
+                }
             }
-        });
+
+            window.parent.postMessage(configData, "*");
+            alert("Product configuration sent: " + JSON.stringify(configData));
+        }
     </script>
 </body>
 </html>
